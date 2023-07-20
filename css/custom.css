@@ -1,0 +1,89 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+h1, 
+h2,
+h3,
+h4 {
+    font-family: 'Oswald', sans-serif;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+img {
+    width: 100%;
+}
+:root {
+    --main-bg-color: linear-gradient(214.38deg, #ff8079 -2.24%, #ff1e1e 59.38%);
+    --title-color : -webkit-linear-gradient(15deg, #ff1e1e 35%, #ff8079 100%);
+    --button-color : linear-gradient(214.38deg, #ff8079 -2.24%, #ff1e1e 59.38%);
+    --sub-body: #212529;
+}
+ 
+/* ------------ heder ---------- */
+#heder {
+    position: static;
+    top: 5px;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 0 3px #ddd;
+}
+#heder .logo {
+    width: 205px;
+}
+#heder ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    justify-content: end;
+}
+#heder ul li {
+    position: relative;
+    transition: .5s;
+}
+#heder ul li a {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--sub-body);
+}
+
+#heder ul li ul {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	background: var(--main-bg-color);
+	padding: 10px 20px;
+	top: 21px;
+	border-radius: 5px;
+	z-index: -1;
+	opacity: 0;
+	transition: .5s;
+}
+#heder ul li ul li a {
+    color: var(--sub-body);
+    text-transform: capitalize;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+#heder ul li:hover ul {
+    opacity: 1;
+}
+
+#heder ul li ul li ul {
+	position: absolute;
+	width: 165px;
+	left: 105px;
+    opacity: 0 !important;
+}
+#heder ul li ul li:hover ul {
+    opacity: 1 !important;
+}
