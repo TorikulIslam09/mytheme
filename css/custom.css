@@ -27,11 +27,12 @@ img {
  
 /* ------------ heder ---------- */
 #heder {
-    position: static;
+    position: sticky;
     top: 5px;
     left: 0;
     padding: 10px 0;
     box-shadow: 0 0 3px #ddd;
+    background: #fff;
 }
 #heder .logo {
     width: 205px;
@@ -87,3 +88,68 @@ img {
 #heder ul li ul li:hover ul {
     opacity: 1 !important;
 }
+
+/* ------------------- custom -menu chang -------- */
+#heder.left_menu .row .col-md-3 {
+    order: 1;
+}
+#heder.left_menu .row .col-md-9 {
+    order: 2;
+}
+#heder.right_menu .row .col-md-3 {
+    order: 2;
+}
+
+#heder.right_menu .row .col-md-9 {
+    order: 1;
+}
+#heder.right_menu ul {
+	justify-content: start;
+}
+#heder.center_menu .row {
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+/* ---------------- page_nav ---------- */
+
+#page_nav .wp_pagenav {
+    margin: 0 !important;
+    padding: 10px !important;
+    background: var(--button-color);
+}
+#page_nav .pages {
+	color: #fff;
+	font-family: 'Oswald', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+#page_nav a{
+    font-size: 14px !important;
+    color: #fff !important;
+    font-family: 'Oswald', sans-serif !important;
+}
+ /* ------------------- footer-section -------------- */
+ #footer_copyright {
+    background: gray;
+ }
+#footer_copyright p {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+
+}
+
+
+
+

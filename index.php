@@ -3,64 +3,55 @@
 /*
     This is index.php main file 
 */
-
 ?>
 
-<!DOCTYPE html>
-<html <?= language_attributes();?>>
-<head>
-    <meta charset="<?= bloginfo('charset');?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?= wp_head();?>
-</head>
-<body>
-    
-<div id="heder">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-3">
 
-                <div class="logo">
-                    <a href="<?= home_url();?>">
-                        <img src="<?= get_template_directory_uri();?>/img/final-logo.png" alt="">
-                    </a>
+<?php
+    get_header();
+ ?>
+
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-9">
+                <?php 
+                    if(have_posts( )) :
+                        while(have_posts()): the_post()
+                ?>
+                <div class="blog-info">
+                    <div class="thumbnail">
+                        <?= the_post_thumbnail('custom_img')?>
+                    </div>
+                    <div class="title">
+                        <a href="<?= the_permalink();?>"> <h1><?= the_title()?></h1> </a>
+                        <p> <?= the_excerpt();?> </p>
+                        <a href="<?= the_permalink($post -> ID);?>"> Read More </a>
+                    </div>
+                
                 </div>
+                <?php 
+                    endwhile;
+                    else: 
+                    _e('No have post');
+                endif;
+                ?>
+              
+              <div id="page_nav">
+                <?php if ('torikul_pagenav') {torikul_pagenav(); } else{ ?>
+                <?php next_posts_link(); ?>
+                <?php previous_posts_link(); ?>
+                <?php } ?>
+               </div>
+
 
             </div>
-
-            <div class="col-md-9">
-                <div class="menu-bar" id="menu_bar">
-                <ul>
-                <li><a href="#"> Home </a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Service</a>
-                    <ul>
-                        <li><a href="">Drp_down_it</a></li>
-                        <li><a href="">Drp_down_it</a></li>
-                        <li><a href="">Drp_down_it</a></li>
-                        <li><a href="">Drp_down_it</a></li>
-                        <li><a href="">Drp_down_it</a>
-                            <ul>
-                                <li><a href="">second items</a></li>
-                                <li><a href="">second items</a></li>
-                                <li><a href="">second items</a></li>
-                                <li><a href="">second items</a></li>
-                                <li><a href="">second items</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="">Geallary</a></li>
-                <li><a href=""> Contact </a></li>
-            </ul>
-                </div>
+            <div class="col-md-3">
+                <h2>sidebar </h2>
             </div>
         </div>
     </div>
-</div>
 
 
-
-<?php wp_footer();?>
-</body>
-</html>
+<?php
+    get_footer();
+ ?>
