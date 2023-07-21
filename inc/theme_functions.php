@@ -7,7 +7,7 @@ $wp_customize -> add_section('header_area', array(
     'description' => 'chang your logo position'
 ));
 $wp_customize -> add_setting('logo_position', array(
-    'default' => get_bloginfo('tempalte_directory').'/img/final-logo.png'
+    'default' => get_bloginfo('tempalte_directory').'img/final-logo.png'
 ));
 $wp_customize -> add_control(new WP_Customize_Image_Control( $wp_customize,'logo_position', array(
     'lebel' => 'Upload your logo',
@@ -60,3 +60,40 @@ $wp_customize -> add_control('footer_set_position', array(
 }
 add_action('customize_register', 'menue_position_right_left_center');
 add_image_size( 'custom_img', 970, 350, true);
+
+
+
+// ------------------- sidebar register ------------
+function widgets_register() {
+    register_sidebar(array(
+        'name' => __('Widgets Main Area', 'trtorikultheme'),
+        'name_id' => 'sibbar_1',
+        'description' => 'if you added widgets area',
+        'before_widges' => '<div class="sidebar_child">', 
+        'after_widgets' => '</div>',
+        'before_title' => '<h1 class="widgets-title">',
+        'after_title' => '</h1>'
+
+    ));
+    register_sidebar(array(
+        'name' => __('Widgets Main Area', 'trtorikultheme'),
+        'name_id' => 'footer_1',
+        'description' => 'if you added widgets area',
+        'before_widges' => '<div class="sidebar_child">', 
+        'after_widgets' => '</div>',
+        'before_title' => '<h1 class="widgets-title">',
+        'after_title' => '</h1>'
+
+    ));
+    register_sidebar(array(
+        'name' => __('Widgets Main Area', 'trtorikultheme'),
+        'name_id' => 'footer_2',
+        'description' => 'if you added widgets area',
+        'before_widges' => '<div class="sidebar_child">', 
+        'after_widgets' => '</div>',
+        'before_title' => '<h1 class="widgets-title">',
+        'after_title' => '</h1>'
+
+    ));
+}
+add_action('widgets_init', 'widgets_register');
