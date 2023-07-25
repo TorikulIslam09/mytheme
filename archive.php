@@ -14,6 +14,7 @@
             <div class="col-md-9">
                 <div class="title_archive">
                     <h2><?= get_the_archive_title(); ?></h2>
+                    <p><?= get_the_archive_description();?></p>
                 </div>
                <?php get_template_part('template_part/blog_setup');?>
             </div>

@@ -8,6 +8,7 @@ function Image_theme_setup(){
     add_theme_support('post-thumbnails', array('page', 'post'));
 }
 add_action('after_setup_theme', 'Image_theme_setup');
+add_image_size( 'resize_thumbanails', 970, 350, true);
 function torikul_excerpt_lenght($length){
     return 40;
   }
@@ -19,7 +20,7 @@ function torikul_excerpt_lenght($length){
  function torikul_pagenav() {
      global $wp_query, $wp_rewrite;
      $pages ='';
-     $max = $wp_query->max_num_pages;
+     $max = $wp_query -> max_num_pages;
      if(!$current = get_query_var('paged')) $current = 1;
      $args['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
      $args['total'] = $max;

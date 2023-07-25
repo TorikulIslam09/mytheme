@@ -73,27 +73,6 @@ function widgets_register() {
         'after_widgets' => '</div>',
         'before_title' => '<h1 class="widgets-title">',
         'after_title' => '</h1>'
-
-    ));
-    register_sidebar(array(
-        'name' => __('Widgets Main Area', 'trtorikultheme'),
-        'name_id' => 'footer_1',
-        'description' => 'if you added widgets area',
-        'before_widges' => '<div class="sidebar_child">', 
-        'after_widgets' => '</div>',
-        'before_title' => '<h1 class="widgets-title">',
-        'after_title' => '</h1>'
-
-    ));
-    register_sidebar(array(
-        'name' => __('Widgets Main Area', 'trtorikultheme'),
-        'name_id' => 'footer_2',
-        'description' => 'if you added widgets area',
-        'before_widges' => '<div class="sidebar_child">', 
-        'after_widgets' => '</div>',
-        'before_title' => '<h1 class="widgets-title">',
-        'after_title' => '</h1>'
-
     ));
 }
 add_action('widgets_init', 'widgets_register');

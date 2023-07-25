@@ -189,6 +189,26 @@ img {
 }
 
 /* -------------------- sidbar-section ----------------*/
+#sidebar .pagenav ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
+#sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
+#sidebar ul li a {
+    display: inline-block;
+    background: rgb(27, 27, 27);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 8px;
+
+}
 .sidbar-section h2 {
     font-size: 25px;
     line-height: 30px;
@@ -222,6 +242,20 @@ img {
 	display: inline-block;
 	color: #fff;
 	border-radius: 5px;
+}
+
+/* ------------------ four-zero --------- */
+.four-zero .div {
+    height: 100vh;
+    display: fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.four-zero h1 {
+    font-size: 105px;
+    -webkit-text-stroke: 3px skyblue;
 }
  /* ------------------- footer-section -------------- */
  #footer_copyright {
